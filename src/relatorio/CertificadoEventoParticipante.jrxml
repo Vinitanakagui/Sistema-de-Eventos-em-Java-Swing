@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CertificadoEventoParticipante" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9f6c55ea-1778-4108-9e45-7d5b3322cf02">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IFSP"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[dHJhYmFsaG9maW5hbC5ldmVudG9zIEFTICwyMjcsMTYsYmZmM2Y3MWItODY4Zi00OWQzLTgzYzgt
+ZTgyMWI1MDhmNDQzO3RyYWJhbGhvZmluYWwucGFydGljaXBhbnRlcyBBUyAsMTc0LDI0NCwyZDAy
+YmY1Mi02ZDZkLTRiOTAtOGNmZC04MmNlNTNkZDEyNzE7dHJhYmFsaG9maW5hbC5tYXRyaWN1bGFz
+IEFTICw1OSwzNixmYTYxNDFjNS01OWMyLTQ3N2EtOGI5Ny0zMWM4OGUxZGVmY2Y7]]>
+	</property>
+	<queryString>
+		<![CDATA[SELECT trabalhofinal.eventos.titulo,
+	trabalhofinal.participantes.nome
+FROM trabalhofinal.matriculas
+	INNER JOIN trabalhofinal.eventos ON 
+	 trabalhofinal.matriculas.idevento = trabalhofinal.eventos.ideventos 
+	INNER JOIN trabalhofinal.participantes ON 
+	 trabalhofinal.matriculas.prontuario = trabalhofinal.participantes.prontuario]]>
+	</queryString>
+	<field name="titulo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="titulo"/>
+		<property name="com.jaspersoft.studio.field.label" value="titulo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="eventos"/>
+		<fieldDescription><![CDATA[evento.titulo]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="participantes"/>
+		<fieldDescription><![CDATA[participante.nome]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="550" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="800" height="550" backcolor="#017212" uuid="0a7d9337-42a8-4558-91b4-942fc0353ba4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="30" y="30" width="740" height="490" uuid="665cea00-df29-4e22-8ca7-22fa4d01d4b8"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="50" y="34" width="710" height="76" uuid="2bf4f485-3a2c-4f11-8113-d75b19323415"/>
+				<textElement textAlignment="Center">
+					<font size="60" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Certificado]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="263" width="630" height="90" uuid="5b790edb-c496-4605-9df2-cb09fc63ba9c"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Certificamos que " +  $F{nome} + " concluiu com sucesso o curso, " +  $F{titulo}   + ", " + "demonstrando dedicação, empenho e aprendizado ao longo de todo o processo."]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="120" y="220" width="520" height="1" uuid="3dde1d0e-2872-43a7-8dfd-014ce14ff755"/>
+			</line>
+			<textField>
+				<reportElement x="120" y="179" width="520" height="56" uuid="f031b7aa-e42a-4b84-8859-9229f128b49f"/>
+				<textElement textAlignment="Center">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="103" y="432" width="140" height="1" uuid="556eaeef-9568-4a0c-a73d-63ed69fd6c31"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="540" y="432" width="140" height="1" uuid="4b2d2980-1a2f-43da-962a-b5f30293840e"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="70" y="110" width="650" height="30" uuid="e5acb504-8efc-4fc4-a7e5-3b2888b4ee60"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Este certificado é orgulhosamente apresentado a:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="440" width="300" height="30" uuid="820da35e-95fc-4c14-849c-493da1851c9d"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Coordenador Da Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="440" width="220" height="30" uuid="46859516-031b-4451-b604-013383e0aa68"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Coordenador do Curso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="400" width="180" height="30" uuid="1c8e82d9-dc1b-4e40-967b-cc55e38435e3"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Guilherme Tanaka]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="535" y="402" width="145" height="30" uuid="bd6e370d-e209-4170-803c-b2cc9d35b248"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vilson Maziero]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

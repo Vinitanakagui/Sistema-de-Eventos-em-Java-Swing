@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListaPresenca" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48191043-5c2c-4760-944b-b00891fc59af">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FP1"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[dHJhYmFsaG9maW5hbC5wYXJ0aWNpcGFudGVzICwxNjUsMjYyLDU0NmQ2NzMxLTgxMjctNDQ0Yi04
+MDJjLWI1ZGU3OWVhYjYxMTt0cmFiYWxob2ZpbmFsLmV2ZW50b3MgLDE2NSwxNSw5NTgxZjE1ZS1l
+ODRiLTQwN2UtOTllNS1hMWU2YzZmMGEwZDU7dHJhYmFsaG9maW5hbC5tYXRyaWN1bGFzICwxNSwx
+OTYsOGY4MGVmYzAtYmYxOC00NWE2LTk3ZGUtMzI2YmEzNTM2NTg3Ow==]]>
+	</property>
+	<subDataset name="FP1" uuid="02a59567-252a-478f-a916-c551d06bb32d">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FP1"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT trabalhofinal.participantes.nome,
+	trabalhofinal.eventos.titulo
+FROM trabalhofinal.matriculas
+	INNER JOIN trabalhofinal.eventos ON 
+	 trabalhofinal.matriculas.idevento = trabalhofinal.eventos.ideventos 
+	INNER JOIN trabalhofinal.participantes ON 
+	 trabalhofinal.matriculas.prontuario = trabalhofinal.participantes.prontuario 
+ORDER BY nome DESC]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="participantes"/>
+		<fieldDescription><![CDATA[participante.nome]]></fieldDescription>
+	</field>
+	<field name="titulo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="titulo"/>
+		<property name="com.jaspersoft.studio.field.label" value="titulo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="eventos"/>
+		<fieldDescription><![CDATA[evento.titulo]]></fieldDescription>
+	</field>
+	<title>
+		<band height="40" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="560" height="40" forecolor="#017212" backcolor="#017212" uuid="2a7b8e8d-95f8-4f7d-a501-19a20a8952f1"/>
+			</rectangle>
+			<textField>
+				<reportElement x="20" y="5" width="530" height="30" forecolor="#FFFFFF" uuid="ae17769a-fb35-4c3d-8ba4-c2b724a652b5"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="38">
+			<staticText>
+				<reportElement x="220" y="7" width="123" height="25" uuid="b7baab96-9c9f-440f-a6e2-17f303ef18eb"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista Presença]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="560" height="20" uuid="3a751503-2d80-4985-bd04-45e85af8b1ab"/>
+			</rectangle>
+			<textField>
+				<reportElement x="10" y="1" width="270" height="20" uuid="743fa96a-832b-4bb9-94e8-d6ccac29f725"/>
+				<textElement textAlignment="Justified">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="280" y="1" width="1" height="20" uuid="b88ea5ac-412f-427f-acbe-1e42b06137cb"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
