@@ -75,9 +75,9 @@ No arquivo persistence.xml, localize a seção <properties> e ajuste conforme ne
 
 O sistema já possui um usuário administrador padrão:
 
-Usuário: admin
+**Usuário**: admin
 
-Senha: 123
+**Senha**: 123
 
 Com ele, é possível acessar o painel administrativo, cadastrar semanas e eventos.
 Novos participantes podem se cadastrar diretamente na tela de login, clicando em "Primeiro Acesso".
